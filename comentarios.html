@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="peliculas">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Peliculas ShineMove</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="./js/angular/angular.min.js" charset="utf-8"></script>
+  <script src="./js/angular/angular-resource.js" charset="utf-8"></script>
+  <script src="./js/angular/FirstController.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="./css/Mystyle.css">
+</head>
+<body ng-controller="FirstController" background="public/img/cine-1.jpg">
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Home</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center blue-text">Peliculas ShineMovie</h1>
+      <br><br>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <h4>Comentarios: </h4>
+      <div>
+        <label for="first_name"class ="black-text"><h6>Nombre</h6></label>
+        <input ng-model="nombre"  type="text" class="validate" pattern="[a-zA-Z0-9]+">
+      </div>
+      <div>
+        <label for="first_name" class ="black-text"><h6>Comentario</h6></label>
+        <textarea id="textarea1" ng-model="tweet" ng-keyup="contador()" class="materialize-textarea"></textarea>
+        {{caracter}}
+        <a class="btn-floating btn waves-effect waves-light red"><i class="material-icons" ng-click="tweetear()">mode_edit</i></a>
+      </div>
+      <br><br>
+      <div ng-repeat="post in arreglo">
+        {{post.post}}
+        {{msg}}
+      </div>
+    </div>
+</div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
